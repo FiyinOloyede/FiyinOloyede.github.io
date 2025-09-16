@@ -1,80 +1,79 @@
 /* Sticky top nav */
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: #ffffff;
-  border-bottom: 1px solid #eaeaea;
-  display: flex;
-  gap: 8px;
-  justify-content: center;
+  position: sticky; top: 0; z-index: 30;
+  background: #fff; border-bottom: 1px solid #eaeaea;
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
   padding: 10px 8px;
 }
 .navbar a {
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  font-weight: 500;
+  text-decoration: none; padding: 8px 12px; border-radius: 8px;
+  border: 1px solid transparent; font-weight: 600; color: #0366d6;
 }
 .navbar a:hover { border-color: #e5e5e5; }
 
 /* Sections */
-.section { padding: 2.2rem 0; }
+.section { padding: 2.4rem 0; }
 .section h2 { margin-top: 0; }
 
-/* Project cards & grids */
-.card {
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  padding: 16px;
-  margin: 12px 0;
+/* HERO */
+.hero {
+  display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center;
   background: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 1rem 0 0.5rem 0;
 }
-.card h3 { margin-top: 0.4rem; }
-.card .btns a {
-  display: inline-block;
-  padding: 8px 12px;
-  margin-right: 8px;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  text-decoration: none;
+.hero img {
+  width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+  border: 2px solid #e5e5e5;
+}
+.hero-title { font-size: 2.2rem; line-height: 1.15; margin: 0; }
+.hero-sub { margin: 4px 0 8px 0; font-weight: 600; }
+
+/* Optional banner under hero */
+.banner {
+  background: url('/assets/img/hero.jpg') center/cover no-repeat;
+  min-height: 160px; border-radius: 10px; margin: 10px 0 0 0;
 }
 
+/* Project grid and cards */
 .grid {
-  display: grid;
+  display: grid; gap: 16px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 14px;
 }
 .grid img {
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid #e5e5e5;
+  width: 100%; border-radius: 10px; border: 1px solid #e5e5e5;
+}
+.exec { font-weight: 700; margin: 12px 0 6px 0; }  /* “Executive Summary” label */
+
+.card {
+  border: 1px solid #e5e5e5; border-radius: 12px; background: #fff;
+  padding: 16px; margin: 12px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.card h3 { margin: 0 0 6px 0; }
+.card .btns a {
+  display: inline-block; padding: 8px 12px; margin-right: 8px; margin-top: 6px;
+  border: 1px solid #e5e5e5; border-radius: 8px; text-decoration: none;
 }
 
 /* Logo grids (skills/certs) */
 .logo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-  align-items: center;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px; align-items: center;
 }
 .logo-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  background: #ffffff;
-  border: 1px solid #e9e9e9;
-  border-radius: 10px;
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px; background: #ffffff; border: 1px solid #e9e9e9; border-radius: 10px;
 }
-.logo-item img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-}
+.logo-item img { width: 28px; height: 28px; object-fit: contain; }
 .logo-item span { font-size: 0.95rem; }
 
+/* Experience blocks */
+.experience .role {
+  display: grid; gap: 10px; grid-template-columns: 60px 1fr; align-items: start;
+  border: 1px solid #e5e5e5; border-radius: 12px; padding: 12px; margin: 10px 0;
+  background: #fff;
+}
+.experience .role img { width: 60px; height: 60px; object-fit: contain; }
+.experience h3 { margin: 0; }
+
 /* Cayman header tweak */
-.page-header { padding: 2.2rem 1rem; }
+.page-header { padding: 2rem 1rem; }
