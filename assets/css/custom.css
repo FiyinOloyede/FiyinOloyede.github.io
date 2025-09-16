@@ -1,0 +1,80 @@
+/* Sticky top nav */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 10px 8px;
+}
+.navbar a {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: 500;
+}
+.navbar a:hover { border-color: #e5e5e5; }
+
+/* Sections */
+.section { padding: 2.2rem 0; }
+.section h2 { margin-top: 0; }
+
+/* Project cards & grids */
+.card {
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px 0;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.card h3 { margin-top: 0.4rem; }
+.card .btns a {
+  display: inline-block;
+  padding: 8px 12px;
+  margin-right: 8px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+.grid img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+}
+
+/* Logo grids (skills/certs) */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  align-items: center;
+}
+.logo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #ffffff;
+  border: 1px solid #e9e9e9;
+  border-radius: 10px;
+}
+.logo-item img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.logo-item span { font-size: 0.95rem; }
+
+/* Cayman header tweak */
+.page-header { padding: 2.2rem 1rem; }
