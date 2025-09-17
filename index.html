@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Ebenezer Fiyinfoluwa Oloyede | Data/BI Analyst Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+      /* --- Intro Hero --- */
+      .intro-hero {
+        position: relative;
+        min-height: 70vh;
+        padding: 3rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        background-image: url("images/hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .intro-hero .intro-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.35); }
+
+      /* Grid
+         Row 1: [photo] [name+roles]
+         Row 2: [photo] [blurb+buttons spanning both columns] */
+      .intro-hero .intro-inner{
+        position: relative; z-index: 1;
+        width: 100%; max-width: 1100px;
+        display: grid; grid-template-columns: 320px 1fr;
+        gap: 1.2rem 2rem; align-items: start;
+      }
+
+      /* Left column (headshot) */
+      .intro-left{ grid-column:1; grid-row:1 / span 2; align-self:flex-start; margin-top:-6px; }
+      .intro-headshot{
+        width:100%; height:auto; display:block; border-radius:12px;
+        border:2px solid rgba(255,255,255,0.6); box-shadow:0 10px 30px rgba(0,0,0,0.25);
+      }
+
+      /* Right top: name + roles */
+      .intro-name{ grid-column:2; grid-row:1; color:#fff; }
+      .intro-title{
+        margin:0; font-size:2.6rem; line-height:1.15; font-weight:800;
+        text-transform:uppercase; letter-spacing:0.02em;
+      }
+      .intro-title--justify{ text-align:justify; text-justify:inter-word; }
+      .intro-title--justify span{ display:inline-block; width:100%; }
+      .intro-title--justify::after{ content:""; display:inline-block; width:100%; }
+
+      .intro-roles{
+        font-weight:700; margin:0.15rem 0 0; font-size:1.5rem; letter-spacing:0.04em;
+      }
+
+      /* Row 2: blurb + buttons spanning both columns */
+      .intro-blurb-area{ grid-column:1 / -1; grid-row:2; align-self:start; color:#fff; max-width:900px; }
+      .intro-blurb{ margin:0 0 1rem 0; max-width:100%; }
+      .intro-links .button{ margin:0.25rem 0.35rem; }
+
+      @media (max-width: 980px){
+        .intro-hero .intro-inner{ grid-template-columns:1fr; gap:1rem; text-align:center; }
+        .intro-left{ grid-row:auto; margin-top:0; }
+        .intro-name{ grid-column:1; }
+        .intro-title{ font-size:2.2rem; }
+        .intro-headshot{ max-width:280px; margin:0 auto 0.8rem auto; }
+        .intro-blurb-area{ grid-column:1; max-width:100%; }
+      }
+
+      /* Portfolio spacing tweaks (title-image gap tighter) */
+      #portfolio article header h2{ margin-bottom:0.4em; }
+      #portfolio article .image{ margin-top:0.2em; margin-bottom:0.8em; }
+
+      /* Uniform portfolio thumbnails */
+      #portfolio article .image img{
+        width:100%; height:220px; object-fit:cover; border-radius:6px;
+      }
+
+      /* Optional: subtle card look for posts */
+      #portfolio .posts article{
+        border:1px solid rgba(210,215,217,0.6);
+        border-radius:8px; padding:1rem; background:rgba(230,235,237,0.2);
+      }
+
+      /* --- Logo grids for Skills & Certifications --- */
+      .logo-grid{
+        display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr));
+        gap:1.25rem; align-items:start;
+      }
+      .logo-card{
+        background:rgba(230,235,237,0.15); border:1px solid rgba(210,215,217,0.6);
+        border-radius:10px; padding:1rem; text-align:center;
+        transition:transform .15s ease, box-shadow .15s ease;
+      }
+      .logo-card:hover{ transform:translateY(-3px); box-shadow:0 10px 20px rgba(0,0,0,0.08); }
+      .logo-card img{ width:100%; height:64px; object-fit:contain; margin-bottom:.6rem; filter:saturate(1.05); }
+      .logo-card .label{ display:block; font-size:.95rem; font-weight:600; line-height:1.35; }
+      .logo-card a.label{ text-decoration:none; }
+
+      /* Force roles directly under the name and align left (desktop) */
+      .intro-name{ display:flex; flex-direction:column; align-items:flex-start; }
+      .intro-title{ margin:0; }
+      .intro-roles{ margin:0.2rem 0 0 !important; text-align:left !important; align-self:flex-start; }
+      @media (min-width:981px){ .intro-right, .intro-name, .intro-roles{ text-align:left !important; } }
+
+      /* Vertical position knob for the ROLES line */
+      :root{ --roles-y:-70px; }
+      .intro-roles{ margin:0 !important; transform:translateY(var(--roles-y)); }
+      @media (max-width:980px){ .intro-roles{ transform:none; } }
+    </style>
+  </head>
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
+
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo">Welcome</a>
+      </header>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#tools">Tools</a></li>
+          <li><a href="#certs">Certifications</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <ul class="icons">
+          <li><a href="https://github.com/fiyinoloyede" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+          <li><a href="https://linkedin.com/in/ebenezeroloyede" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+          <li><a href="mailto:fiyinoloyede84@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+      </nav>
+
+      <!-- Intro (Hero) -->
+      <div id="intro" class="intro-hero">
+        <div class="intro-overlay"></div>
+
+        <div class="intro-inner">
+          <!-- Left: Headshot -->
+          <div class="intro-left">
+            <img src="images/headshot.jpg" alt="Ebenezer Oloyede headshot" class="intro-headshot" />
+          </div>
+
+          <!-- Right: Name + Roles -->
+          <div class="intro-name">
+            <h1 class="intro-title intro-title--justify">
+              <span>I’M</span>
+              <span>FIYINFOLUWA</span>
+              <span>OLOYEDE</span>
+            </h1>
+            <div class="intro-roles">
+              DATA SCIENTIST AND BUSINESS INTELLIGENCE ANALYST
+            </div>
+          </div>
+
+          <!-- Row 2: Blurb + Buttons -->
+          <div class="intro-blurb-area">
+            <p class="intro-blurb">
+              For the past four years, I have helped organizations make sense of their data, turning the raw numbers into clear insights that actually help leadership make smarter decisions. My sweet spot sits right between business intelligence, analytics automation, and data science. I enjoy figuring out the puzzle, using whatever tools fit best, whether that's Python, SQL, Power BI, or something else entirely. I'm currently a Business Intelligence Analyst at the University of Lincoln, where I design and reporting over a million rows of engagement data, reduce refresh times by 60%, improve dashboard performance by 70%, and support leadership in making approximately 40% more data-driven decisions.
+            </p>
+            <p class="intro-links" style="text-align: center;">
+              <a href="assets/CV.pdf" class="button" target="_blank">Download CV</a>
+              <a href="#portfolio" class="button icon solid fa-arrow-down scrolly">View Work</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main -->
+      <div id="main">
+
+        <!-- ============ PORTFOLIO (with header) ============ -->
+        <section id="portfolio" class="post">
+          <header class="major">
+            <h2>Portfolio</h2>
+          </header>
+
+          <section class="posts">
+            <!-- 1. Product Recommendation System (Python) -->
+            <article>
+              <header>
+                <h2>
+                  <a href="https://github.com/FiyinOloyede/Product_Recommendation">
+                    Product Recommendation System
+                  </a>
+                </h2>
+              </header>
+              <a href="https://github.com/FiyinOloyede/Product_Recommendation" class="image fit">
+                <img src="images/projects/reco_overview.png" alt="Product Recommendation System overview" />
+              </a>
+              <p>
+                This project builds a recommendation engine that learns product–product relationships from real purchase baskets using Word2Vec. The pipeline, implemented in Python with pandas and NumPy for preprocessing and Matplotlib for validation, generates personalized suggestions from a UK online retail dataset (Dec 2010–2011). The outcome demonstrates a scalable approach to automate cross-sell logic and improve customer experience and retention.
+              </p>
+            </article>
+
+            <!-- 2. House Price Prediction (Python with Spark) -->
+            <article>
+              <header>
+                <h2>
+                  <a href="https://github.com/FiyinOloyede/house_prediction_with_pyspark_mllib">
+                    House Price Prediction
+                  </a>
+                </h2>
+              </header>
+              <a href="https://github.com/FiyinOloyede/house_prediction_with_pyspark_mllib" class="image fit">
+                <img src="images/projects/house_overview.jpg" alt="House price prediction with PySpark" />
+              </a>
+              <p>
+                This project analyzes King County home sales (May 2014–2015) using a PySpark MLlib pipeline to engineer features and evaluate multiple regressors. Model selection is driven by RMSE and R² on a hold-out set, providing a robust, scalable workflow for valuation scenarios and pricing sensitivity analysis across large datasets.
+              </p>
+            </article>
+
+            <!-- 3. Predictive Analysis on Space Rocket Data (Python & SQL) -->
+            <article>
+              <header>
+                <h2>
+                  <a href="https://github.com/FiyinOloyede/IBM_Data_Science_SpaceX_Landing_Prediction">
+                    Predictive Analysis on Space Rocket Data
+                  </a>
+                </h2>
+              </header>
+              <a href="https://github.com/FiyinOloyede/IBM_Data_Science_SpaceX_Landing_Prediction" class="image fit">
+                <img src="images/projects/rocket_overview.png" alt="Rocket landing prediction project" />
+              </a>
+              <p>
+                This project ingests launch data from REST APIs and web scraping, performs SQL-driven EDA, and maps outcomes with Folium. A Decision Tree classifier achieves approximately 86.2% accuracy for landing success, illustrating how interpretable features and transparent models can reduce uncertainty in mission planning and resource allocation.
+              </p>
+            </article>
+
+            <!-- 4. Cyclistic Bike Share — Case Study (R) -->
+            <article>
+              <header>
+                <h2>
+                  <a href="https://www.kaggle.com/code/fiyinoloyede/divvy-trip-data-full-year-analysis">
+                    Cyclistic Bike Share — Case Study
+                  </a>
+                </h2>
+              </header>
+              <a href="https://www.kaggle.com/code/fiyinoloyede/divvy-trip-data-full-year-analysis" class="image fit">
+                <img src="images/projects/bike_overview.png" alt="Cyclistic bike share case study" />
+              </a>
+              <p>
+                This case study explores behavioral differences between casual riders and members across a full year of trips. Using the tidyverse (dplyr, ggplot2), the analysis profiles usage by time, station, and trip length, surfacing high-leverage segments and time windows for targeted campaigns that convert casual riders to members.
+              </p>
+            </article>
+
+            <!-- 5. Udemy Course Dashboard (Power BI) -->
+            <article>
+              <header>
+                <h2>
+                  <a href="https://app.powerbi.com/view?r=eyJrIjoiNzAzOTYwZTEtMjJjMy00YjNlLWE0OTQtOGQ0NzFhMDdmMTY4IiwidCI6IjA0NDBlNjdlLTNkYjItNDgxMS05YzEwLWQzZDFmZDI1MmIyZiJ9">
+                    Udemy Course Dashboard
+                  </a>
+                </h2>
+              </header>
+              <a href="https://app.powerbi.com/view?r=eyJrIjoiNzAzOTYwZTEtMjJjMy00YjNlLWE0OTQtOGQ0NzFhMDdmMTY4IiwidCI6IjA0NDBlNjdlLTNkYjItNDgxMS05YzEwLWQzZDFmZDI1MmIyZiJ9" class="image fit">
+                <img src="images/projects/udemy_overview.png" alt="Udemy courses Power BI dashboard" />
+              </a>
+              <p>
+                This dashboard provides a single view of revenue, subscriber growth, and content performance from 2012 to 2017. A star-schema model with DAX measures supports NPS tracking, growth metrics, cohort analysis, and category drill-throughs, enabling pricing and content decisions grounded in stable KPIs and trend visibility.
+              </p>
+            </article>
+
+            <!-- 6. Cribie User Engagement Dashboard (Power BI) -->
+            <article>
+              <header>
+                <h2>
+                  <a href="https://app.powerbi.com/view?r=eyJrIjoiNzc5MzM5NzEtZDcyMi00MWJkLTlmNjAtZDU4MmJiMzhmZjJmIiwidCI6IjA0NDBlNjdlLTNkYjItNDgxMS05YzEwLWQzZDFmZDI1MmIyZiJ9">
+                    Cribie User Engagement Dashboard
+                  </a>
+                </h2>
+              </header>
+              <a href="https://app.powerbi.com/view?r=eyJrIjoiNzc5MzM5NzEtZDcyMi00MWJkLTlmNjAtZDU4MmJiMzhmZjJmIiwidCI6IjA0NDBlNjdlLTNkYjItNDgxMS05YzEwLWQzZDFmZDI1MmIyZiJ9" class="image fit">
+                <img src="images/projects/cribie_overview.png" alt="Cribie engagement Power BI dashboard" />
+              </a>
+              <p>
+                This dashboard tracks 2023 registrations, active users, and order volume by month and region. KPI scorecards, hierarchical drilldowns, and regional comparisons reveal growth pockets and underperforming areas, guiding targeted activation strategies and operational improvements.
+              </p>
+            </article>
+
+            <!-- 7. Passenger Satisfaction Dashboard (Power BI & R) -->
+            <article>
+              <header>
+                <h2>
+                  <a href="https://www.kaggle.com/code/fiyinoloyede/airline-passenger-satisfaction">
+                    Passenger Satisfaction Dashboard (Power BI &amp; R)
+                  </a>
+                </h2>
+              </header>
+              <a href="https://www.kaggle.com/code/fiyinoloyede/airline-passenger-satisfaction" class="image fit">
+                <img src="images/projects/psd_overview.png" alt="Passenger satisfaction dashboard" />
+              </a>
+              <p>
+                This dashboard combines R-based EDA (tidyverse) with a Power BI data model and advanced DAX to analyze NPS and service attributes. The results isolate the levers most correlated with satisfaction uplift and present a clear, operational roadmap for improvement across customer touchpoints.
+              </p>
+            </article>
+          </section>
+        </section>
+
+        <!-- TOOLS -->
+        <section id="tools" class="post">
+          <header class="major"><h2>Tools &amp; Competencies</h2></header>
+          <div class="logo-grid skills-grid">
+            <div class="logo-card"><img src="images/logos/skills/Power-BI.png" alt="Power BI logo" /><span class="label">Power BI<br/> (DAX, Data Modeling, Power Query)</span></div>
+            <div class="logo-card"><img src="images/logos/skills/python.png" alt="Python logo" /><span class="label">Python<br/> (pandas, NumPy, scikit-learn, Matplotlib)</span></div>
+            <div class="logo-card"><img src="images/logos/skills/sql.png" alt="SQL logo" /><span class="label">SQL<br/> (SQL Server, MySQL)</span></div>
+            <div class="logo-card"><img src="images/logos/skills/R.png" alt="R logo" /><span class="label">R<br/> (tidyverse, ggplot2)</span></div>
+            <div class="logo-card"><img src="images/logos/skills/power-automate.png" alt="Power Automate logo" /><span class="label">Power Automate<br/> (workflow automation)</span></div>
+            <div class="logo-card"><img src="images/logos/skills/spark.png" alt="Spark logo" /><span class="label">Apache Spark<br/> (PySpark MLlib)</span></div>
+            <div class="logo-card"><img src="images/logos/skills/salesforce.png" alt="Salesforce logo" /><span class="label">Salesforce<br/> (reporting & integrations)</span></div>
+            <div class="logo-card"><img src="images/logos/skills/Jira.png" alt="Jira logo" /><span class="label">Jira<br/> (agile planning & tracking)</span></div>
+            <div class="logo-card"><img src="images/logos/skills/excel.png" alt="Excel logo" /><span class="label">Excel<br/> (PivotTables, VLOOKUP, VBA)</span></div>
+          </div>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section id="certs" class="post">
+          <header class="major"><h2>Certifications</h2></header>
+          <div class="logo-grid certs-grid">
+            <div class="logo-card"><img src="images/logos/certs/azure-ai-fundamentals.png" alt="Microsoft Azure AI Fundamentals logo" /><a class="label" target="_blank" href="https://www.credly.com/badges/2697478d-8b45-4a1b-a691-70691bca87a9/linked_in_profile">Microsoft Azure AI Fundamentals (AI-900)</a></div>
+            <div class="logo-card"><img src="images/logos/certs/azure-data-fundamentals.png" alt="Microsoft Azure Data Fundamentals logo" /><a class="label" target="_blank" href="https://www.credly.com/badges/64576848-bac4-4ac3-83f9-07337d64f971/linked_in_profile">Microsoft Azure Data Fundamentals (DP-900)</a></div>
+            <div class="logo-card"><img src="images/logos/certs/Ibm-data-science.png" alt="IBM Data Science logo" /><a class="label" target="_blank" href="https://www.coursera.org/account/accomplishments/specialization/certificate/NTHLEYZAWYRN">IBM Data Science Professional Certificate</a></div>
+            <div class="logo-card"><img src="images/logos/certs/rice-university.jpg" alt="Rice University logo" /><a class="label" target="_blank" href="https://www.coursera.org/account/accomplishments/specialization/certificate/2ZB3PUSAFMWC">Business Statistics &amp; Analysis (Rice University)</a></div>
+            <div class="logo-card"><img src="images/logos/certs/google-data-analytics.png" alt="Google Data Analytics logo" /><a class="label" target="_blank" href="https://www.coursera.org/account/accomplishments/specialization/certificate/UFK854U6NHRR">Google Data Analytics Professional Certificate</a></div>
+          </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="post">
+          <header class="major"><h2>Experience</h2></header>
+          <h3>Business Intelligence Analyst — University of Lincoln (2025–Present)</h3>
+          <p>As a BI Analyst, I collaborate with managers and coordinators across employability and student engagement to deliver insights aligned with the university’s strategic goals. I designed and launched dashboards such as Appointments, Skills Assessments, and Opportunities, which became the most widely used analytical tools in the division. By automating ETL pipelines with SQL, Power Query, and Azure Data Factory, I reduced refresh times by 60% and enhanced data integrity. These improvements positioned data as a core enabler of operational decisions, boosting overall efficiency by 40%.</p>
+
+          <h3>Digital Platform Data Analyst — Philip Morris International (2023–2024)</h3>
+          <p>At PMI, I led the analytics framework for scaling digital operations across more than 25,000 points of sale. I built Power BI dashboards and SQL workflows that automated reporting and reduced manual processes by 80%. By restructuring and normalizing large datasets, I improved computational efficiency by 65%. Using Python for predictive modeling, I analyzed user behavior patterns that increased weekly returning users by 30%, directly improving product-market fit and operational performance.</p>
+
+          <h3>Data Analyst — Quantum Expressions Media Consult (2022–2023)</h3>
+          <p>I developed KPI dashboards in Power BI to monitor weekly performance and resource allocation, enabling more efficient decision-making. By combining Python and Power BI for engagement analysis, I uncovered patterns that boosted revenue by 42% and improved user engagement by 45%. My insights helped shape digital transformation and brand positioning strategies that delivered measurable results for clients.</p>
+
+          <h3>Data Analyst — T. Pumpy Concept (2020–2022)</h3>
+          <p>I supported business growth by conducting performance analysis with Excel and Power BI, uncovering inefficiencies and opportunities for improvement. I processed and analyzed more than 10,000 sales records using SQL, delivering actionable insights that improved workflow efficiency. I also introduced a CRM system across seven branches, streamlining customer data management and contributing to stronger service delivery.</p>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="post">
+          <header class="major"><h2>Contact</h2></header>
+          <p>
+            <strong>Phone:</strong> <a href="tel:+447881162823">+44 7881 162823</a><br/>
+            <strong>Email:</strong> <a href="mailto:fiyinoloyede84@gmail.com">fiyinoloyede84@gmail.com</a>
+          </p>
+          <ul class="icons">
+            <li><a href="https://github.com/fiyinoloyede" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="https://linkedin.com/in/ebenezeroloyede" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://x.com/fiyin_oloyede" class="icon brands fa-twitter"><span class="label">X</span></a></li>
+          </ul>
+        </section>
+
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section><p>&copy; Ebenezer Fiyinfoluwa Oloyede. All rights reserved.</p></section>
+      </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
